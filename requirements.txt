@@ -1,0 +1,7 @@
+PyQt5
+requests
+bs4 
+selenium==4.0.0.b3 
+pywin32 
+lxml
+pyperclip

@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>QC APP</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/gui/iconapp/gui/apple.png</normaloff>:/gui/iconapp/gui/apple.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>5</number>
+   </property>
+   <property name="topMargin">
+    <number>5</number>
+   </property>
+   <property name="rightMargin">
+    <number>5</number>
+   </property>
+   <property name="bottomMargin">
+    <number>5</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame_main">
+     <property name="styleSheet">
+      <string notr="true">/*QFrame*/
+QFrame#frame_main {
+	background-color:rgb(50, 50, 50);
+	border: none;
+	border-radius: 5px;
+	}
+	QFrame#frame_header{
+	background-color:qlineargradient(spread:reflect, x1:0, y1:0.136, x2:0, y2:1, stop:0 rgba(50, 50, 50, 255), stop:0.774011 rgba(81, 81, 81, 255));
+	border-bottom: 1px solid rgb(34,34,34);
+	border-radius: 5px;
+	border-bottom-right-radius: -5px;
+	border-bottom-left-radius: -5px;
+	}
+/*QLabel*/
+QLabel{
+color: rgb(255,255,255);
+}
+QLabel#label_light{
+	background-image: url(:/gui/iconapp/gui/light_theme.png);
+	background-repeat:none;
+	border-radius: 10px;
+}
+
+QLabel#label_dark{
+	background-image: url(:/gui/iconapp/gui/dark_theme.png);
+	background-repeat: none;
+	border-radius: 10px;
+}
+
+
+/* QRadioButton*/
+QRadioButton{
+		color:rgb(188, 192, 195);
+
+}
+QRadioButton::indicator{
+		color:rgb(188, 192, 195);
+		border: 2px solid rgb(255,255,255);
+		height: 20px;
+		width:20px;
+		border-radius:12px;
+		background: rgb(44, 49, 60);
+		
+}
+QRadioButton::indicator:hover{
+		 border-radius: 10px;
+}
+QRadioButton::indicator:checked {
+	 	background: 3px solid rgb(52, 59, 72);
+	    border: 2px solid rgb(138, 180, 248);  
+		border-radius:12px;     
+		background-image: url(:/resource/iconapp/24x24/cil-check-alt.png);
+}
+
+/*QPushButton*/
+
+	/*QPushButton ok */
+QPushButton#pushButton_ok {
+	    color: rgb(255, 255, 255);
+	    background-color: qlineargradient(spread:pad, x1:0, y1:0.994, x2:0, y2:0.0569545, stop:0.0340909 rgba(0, 170, 255, 255), stop:1 rgba(170, 214, 255, 255));
+	    border: 1px solid rgb(76, 162, 249);
+	    border-radius: 5px;
+	       
+}
+QPushButton#pushButton_ok:hover { 
+	    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(0, 170, 255, 255), stop:0.755682 rgba(171, 224, 255, 255));
+	    border: 2px solid rgb(76, 162, 249);
+	   
+	}
+QPushButton#pushButton_ok:pressed {
+	       background-color: qlineargradient(spread:pad, x1:0, y1:0.994, x2:0, y2:0.0569545, stop:0.0340909 rgba(0, 170, 255, 255), stop:1 rgba(170, 214, 255, 255));
+ }
+
+
+	/*QPushButton cancel*/
+
+QPushButton#pushButton_cancel {
+	    color: rgb(33, 33, 33);
+	    background-color: qlineargradient(spread:reflect, x1:0.0454545, y1:0, x2:0.006, y2:1, stop:0 rgba(235, 235, 235, 255), stop:0.801136 rgba(176, 176, 176, 255));
+	    border: 1px solid rgb(180, 180, 180);
+	    border-radius: 5px;
+	       
+	}
+QPushButton#pushButton_cancel:hover { 
+	    background-color: qlineargradient(spread:reflect, x1:0.0454545, y1:0, x2:0.006, y2:1, stop:0 rgba(235, 235, 235, 255), stop:0.801136 rgba(210, 210, 210, 255));
+	    border: 2px solid rgb(76, 162, 249);
+	   
+}
+QPushButton#pushButton_cancel:pressed{
+	       background-color:  qlineargradient(spread:reflect, x1:0.0454545, y1:0, x2:0.006, y2:1, stop:0 rgba(235, 235, 235, 255), stop:0.801136 rgba(230, 230, 230, 255));
+ }
+
+QPushButton{
+		background-color:rgb(75, 104, 133);
+		color: rgba(255,255,255,210);
+		border: None;
+		border-radius: 10px;
+		background-repeat: None;
+		background-position:center;
+
+}
+QPushButton:hover	{	
+		background-color:rgb(65, 91, 116);
+		border: 1px solid rgb(91, 152, 248);	
+	}
+QPushButton:pressed	{	
+		background-color:  rgb(96, 134, 171);
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="frame_header">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe UI</family>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_logo">
+           <property name="minimumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">image: url(:/gui/iconapp/gui/apple.png);
+width: 20px;
+height:20px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_title">
+           <property name="text">
+            <string>QC - Chọn giao diện</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_close">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton#pushButton_close
+	{
+		background: none;
+		border: none;
+		border-radius: -10px;
+		background-repeat:none;
+		background-position: center;
+		background-image: url(:/bold/iconapp/bold.40x40/3.png);
+	}
+
+	QPushButton#pushButton_close:hover
+	{
+		background-color: rgb(121, 121, 121);
+		background-image: url(:/16x16/iconapp/16x16/cil-x.png);
+		
+	}
+
+	QPushButton#pushButton_close:pressed
+	{
+		background-color: rgb(252, 96, 66);
+		
+	}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_img">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <property name="leftMargin">
+          <number>10</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>10</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <property name="horizontalSpacing">
+            <number>20</number>
+           </property>
+           <item row="3" column="0">
+            <widget class="QRadioButton" name="radioButton_light">
+             <property name="font">
+              <font>
+               <family>Segoe UI</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Giao diện ban ngày</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="autoRepeat">
+              <bool>false</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QRadioButton" name="radioButton_dark">
+             <property name="font">
+              <font>
+               <family>Segoe UI</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Giao diện ban đêm</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="autoRepeat">
+              <bool>false</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton_light">
+             <property name="minimumSize">
+              <size>
+               <width>260</width>
+               <height>140</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>260</width>
+               <height>140</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/gui/iconapp/gui/light_theme.png);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="shortcut">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="pushButton_dark">
+             <property name="minimumSize">
+              <size>
+               <width>260</width>
+               <height>140</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>260</width>
+               <height>140</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/gui/iconapp/gui/dark_theme.png);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="shortcut">
+              <string>2</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_done">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <property name="spacing">
+          <number>17</number>
+         </property>
+         <property name="leftMargin">
+          <number>10</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <property name="bottomMargin">
+          <number>8</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_done">
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="pushButton_cancel">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Segoe UI</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>THOÁT</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resource.qrc">
+               <normaloff>:/16x16/iconapp/16x16/cil-account-logout.png</normaloff>:/16x16/iconapp/16x16/cil-account-logout.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="shortcut">
+              <string>Esc</string>
+             </property>
+             <property name="autoDefault">
+              <bool>false</bool>
+             </property>
+             <property name="default">
+              <bool>false</bool>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_done">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_ok">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>150</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Segoe UI</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>ĐI TIẾP</string>
+             </property>
+             <property name="icon">
+              <iconset resource="resource.qrc">
+               <normaloff>:/resource/resources/33.png</normaloff>:/resource/resources/33.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="shortcut">
+              <string>Return</string>
+             </property>
+             <property name="autoDefault">
+              <bool>false</bool>
+             </property>
+             <property name="default">
+              <bool>false</bool>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
