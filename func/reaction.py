@@ -12,7 +12,7 @@ class GetId:
 		session = requests.Session()
 		url = 'https://giaimasohoc.com/login/login'	
 
-		rq = session.post(url , headers = self.headers).text
+		rq = session.get(url).text
 
 		soup_full = BeautifulSoup(rq,'lxml') # Lấy data sau khi login thành công
 		
@@ -44,36 +44,42 @@ class GetId:
 
 
 class Reaction:
+	headers = {
+				"sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"',
+				"sec-ch-ua-mobile": "?0",
+				"sec-ch-ua-platform": '"Windows"',
+				"Upgrade-Insecure-Requests": '1',
+				"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
+				}
 	 
 	def login_gmsh(self,data):		
 		session = requests.Session()
 		url = 'https://giaimasohoc.com/login/login'	
-
-		soup_full = BeautifulSoup(session.post(url , headers = self.headers).text,'lxml') # Lấy data sau khi login thành công
+				
+		soup_full = BeautifulSoup(session.get(url).text,'lxml') # Lấy data sau khi login thành công
 		
 		_xfToken = soup_full.find(attrs={'name':'_xfToken'})['value']
 
 		tk = data.split('|')[1]
 		mk = data.split('|')[2]
+	
 
 		data_json = {'login': tk,
 				'password':mk,
+				'remember': 1,
+				'_xfRedirect':'/',
 				'_xfToken':_xfToken
 				}
+		
 
 		soup = session.post(url ,data=data_json, headers = self.headers).text # Lấy data sau khi login thành công
 		
-		if tk in soup:
+
+		if tk.lower() in soup.lower():
 			self.new_signal.emit(int(data.split('|')[0]),'login thành công!','normal',False)
 			return (_xfToken,session)
 		self.new_signal.emit(int(data.split('|')[0]),'login thất bại!','red',True)
 		return False
-
-		
-		
-		
-		
-
 
 	def reaction_post(self):	
 	
@@ -132,7 +138,8 @@ class Reaction:
 
 				for link in list_link:
 					threading.Thread(target = self.reaction, args = (data,_xfToken,session,link,num,num_link)).start()
-			except Exception as e:				
+			except Exception as e:	
+				print(e)			
 				self.new_signal.emit(int(data.split('|')[0]),'Err','red',False)
 
 

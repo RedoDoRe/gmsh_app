@@ -1,3 +1,7 @@
-from win32process import CREATE_NO_WINDOW
+OK = 123
 
-print(CREATE_NO_WINDOW)
+
+
+def a():
+	print(OK)
+a()

@@ -7,7 +7,7 @@
   },
   {
    "optionDest": "filenames",
-   "value": "E:/(H).Project/2.PyQt5/Qt.gmsh-v3/main_theme.py"
+   "value": "F:/(H).Project/2.PyQt5/Qt.gmsh-v3-2/main_theme.py"
   },
   {
    "optionDest": "onefile",
@@ -19,7 +19,7 @@
   },
   {
    "optionDest": "icon_file",
-   "value": "E:/(H).Project/2.PyQt5/Qt.gmsh-v3/iconapp/app.ico"
+   "value": "F:/(H).Project/2.PyQt5/Qt.gmsh-v3-2/iconapp/app.ico"
   },
   {
    "optionDest": "name",
@@ -34,10 +34,6 @@
    "value": true
   },
   {
-   "optionDest": "loglevel",
-   "value": "DEBUG"
-  },
-  {
    "optionDest": "debug",
    "value": "all"
   },
@@ -48,6 +44,14 @@
   {
    "optionDest": "noupx",
    "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "embed_manifest",
+   "value": true
   },
   {
    "optionDest": "uac_admin",
@@ -67,10 +71,6 @@
   },
   {
    "optionDest": "bootloader_ignore_signals",
-   "value": false
-  },
-  {
-   "optionDest": "disable_windowed_traceback",
    "value": false
   }
  ],

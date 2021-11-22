@@ -8,12 +8,20 @@ from bs4 import BeautifulSoup
 from urllib.parse import unquote
 
 class Comment:
+	headers= {
+				"sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"',
+				"sec-ch-ua-mobile": "?0",
+				"sec-ch-ua-platform": '"Windows"',
+				"Upgrade-Insecure-Requests": '1',
+				"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
+				}
+
 	def login(self,data):	
 		
 		session = requests.Session()
 		url = 'https://giaimasohoc.com/login/login'
 		
-		soup_full = BeautifulSoup(session.post(url , headers = self.headers).text,'lxml') # Lấy data sau khi login thành công
+		soup_full = BeautifulSoup(session.get(url).text,'lxml') # Lấy data sau khi login thành công
 		_xfToken = soup_full.find(attrs={'name':'_xfToken'})['value']
 
 		tk = data.split('|')[1]
@@ -25,7 +33,7 @@ class Comment:
 					}
 		
 		soup = session.post(url ,data=data_json, headers = self.headers).text # Lấy data sau khi login thành công
-		if tk in soup:
+		if tk.lower() in soup.lower():
 			self.new_signal.emit(int(data.split('|')[0]),'login thành công!','normal',False)		
 			return {
 					'_xfToken': _xfToken,'session':session,

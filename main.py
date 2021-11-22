@@ -483,23 +483,10 @@ class ThreadReaction(QtCore.QThread,Reaction,GetId):
 		super(ThreadReaction,self).__init__()
 		self.list_account = list_account 
 		self.settings = settings
-		self.state_time = state_time
-		self.headers = {
-						"alt-svc": 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400',
-						"cache-control": "private, no-cache, max-age=0",
-						"cf-cache-status": "DYNAMIC",
-						"cf-ray": "6a18f8f16d4b42f4-LAX",
-						"sec-ch-ua": '"Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"',
-						"sec-ch-ua-mobile": "?0",
-						"sec-ch-ua-platform": "Windows",
-						"Upgrade-Insecure-Requests": "1",
-						"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"							
-						}
+		self.state_time = state_time		
 		self.list_link_topic = []
 		if 	self.settings['options'] ==2:
 			self.list_link_topic= self.reaction_topic()	
-
-
 
 	#Threading với nhiều tài khoản
 	def run(self): 
@@ -528,17 +515,7 @@ class ThreadComment(QtCore.QThread,Comment):
 		self.settings = settings
 		self.state_time = state_time
 		self.link_cmt = self.settings['list_link'][0]
-		self.headers = {
-						"alt-svc": 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400',
-						"cache-control": "private, no-cache, max-age=0",
-						"cf-cache-status": "DYNAMIC",
-						"cf-ray": "6a18f8f16d4b42f4-LAX",
-						"sec-ch-ua": '"Google Chrome";v="95", "Chromium";v="95", ";Not A Brand";v="99"',
-						"sec-ch-ua-mobile": "?0",
-						"sec-ch-ua-platform": "Windows",
-						"Upgrade-Insecure-Requests": "1",
-						"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"							
-						}		
+			
 	#Threading với nhiều tài khoản
 	def run(self):			
 		global state_stop	 
